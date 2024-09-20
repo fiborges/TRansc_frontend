@@ -1,0 +1,449 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Cor de fundo para preencher as áreas vazias */
+  background: url('../images/home.png') no-repeat center center;
+  background-size: cover; /* Contém a imagem dentro da tela sem cortar */
+  background-position: center;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Garante que os elementos internos respeitem a hierarquia de empilhamento */
+  z-index: 1; /* Certifica que o corpo principal do conteúdo esteja abaixo da barra de navegação */
+}
+
+.nav {
+  width: 100%; /* Faz a barra de navegação ocupar toda a largura da tela */
+  display: flex;
+  justify-content: flex-end; /* Alinha os botões à direita */
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed; /* Fixa a barra no topo da tela e a mantém visível ao rolar */
+  top: 0;
+  left: 0;
+  box-sizing: border-box; /* Inclui padding e borda dentro da largura */
+  overflow: hidden; /* Previne que o conteúdo ultrapasse a largura da barra */
+  z-index: 1000; /* Garante que a barra de navegação esteja acima de outros elementos */
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px; /* Ajuste o espaçamento dos botões */
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border: 2px solid #0ff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  white-space: nowrap; /* Evita que o texto quebre */
+  z-index: 1001; /* Garante que os botões estejam acima de outros elementos */
+}
+
+.nav a:last-child {
+  margin-right: 15px; /* Adiciona margem à direita do último botão */
+}
+
+.nav a:hover {
+  background-color: #0ff;
+  color: #000;
+  box-shadow: 0 0 15px #0ff;
+}
+
+#app {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Alinha o conteúdo ao centro da página */
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px; /* Adiciona espaço suficiente para que o conteúdo não fique sob a barra de navegação */
+}
+
+.content {
+  text-align: center;
+  padding: 60px; /* Aumentar o padding para expandir o quadrado */
+  max-width: 1200px; /* Aumentar a largura máxima */
+  background: rgba(0,0,0,0.5); /* Tornar o fundo menos preto */
+  border-radius: 20px;
+  border: 3px solid #0ff; /* Adicionar uma borda neon */
+  box-shadow: 0 0 20px #0ff; /* Adicionar uma sombra neon para relevo */
+}
+
+.home-title {
+  font-size: 90px; /* Tamanho grande para a página Home */
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+.other-title {
+  font-size: 32px; /* Tamanho menor para outras páginas */
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+}
+
+.about-page {
+  background-color: #000; /* Cor de fundo para preencher as áreas vazias */
+  background: url('../images/about.png') no-repeat center center;
+  background-size: cover; /* Contém a imagem dentro da tela sem cortar */
+  background-position: center top; /* Ajusta a posição para o topo */
+  padding-bottom: 150px; /* Adiciona um espaço embaixo para visualizar o rebordo */
+}
+
+.about-page #app {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Centraliza verticalmente ao centro */
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 300px; /* Adiciona espaço abaixo para mover o conteúdo mais para baixo */
+}
+
+.about-page .content {
+  text-align: center;
+  padding: 60px;
+  max-width: 1200px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 20px;
+  border: 3px solid #0ff;
+  box-shadow: 0 0 20px #0ff;
+}
+
+.about-page .content h1 {
+  font-size: 42px; /* Mantém o tamanho do título */
+  margin-bottom: 80px; /* Aumenta a distância entre o título e o texto */
+}
+
+.about-page .content p {
+  font-size: 14px; /* Reduz o tamanho da fonte do texto */
+  line-height: 1.6; /* Mantém uma boa legibilidade com espaçamento entre linhas */
+  margin-bottom: 20px; /* Espaçamento entre parágrafos */
+}
+
+/* Centralizar o quadrado de texto nas páginas Login e Register */
+.login-page #app,
+.register-page #app {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  flex-direction: column;
+  padding-top: 50px; /* Ajuste fino para a posição vertical */
+}
+
+/* Aumentar a distância entre os botões e o formulário */
+.login-page .content form,
+.register-page .content form {
+  margin-bottom: 60px; /* Adiciona espaço entre o formulário e os botões */
+}
+
+/* Ajustar o tamanho das letras dos botões */
+.login-page .content button,
+.register-page .content button {
+  font-size: 12px; /* Reduz o tamanho da fonte dos botões */
+  padding: 12px 45px;
+  margin-top: 20px /* Ajuste no padding para manter o tamanho proporcional */
+}
+
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid #0ff;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font-size: 24px;
+  padding: 15px 30px;
+  background: #0ff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Press Start 2P', cursive;
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+button:hover {
+  background: #00f;
+  box-shadow: 0 0 20px #00f;
+  color: #fff;
+}
+
+.play-button {
+  background: #0f0;
+}
+
+.play-button:hover {
+  background: #0f0;
+  box-shadow: 0 0 20px #0f0;
+}
+
+.menu-button {
+  background: #ff0;
+}
+
+.menu-button:hover {
+  background: #ff0;
+  box-shadow: 0 0 20px #ff0;
+}
+
+/* Estilo para a página de menu */
+.menu-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+  background: none; /* Reseta o background se por acaso for herdado */
+}
+
+.menu-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/menus.png') no-repeat center center fixed;
+  background-size: cover;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adiciona uma camada preta com opacidade */
+  mix-blend-mode: multiply; /* Mistura as cores para escurecer */
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo fique acima do background */
+}
+
+.menu-title {
+  font-size: 60px;
+  color: #0ff;
+  text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  margin-bottom: 60px;
+}
+
+/* Ajuste para a caixa que contém o texto e botões */
+.content {
+  text-align: center;
+  padding: 100px 200px; /* Aumenta o padding para tornar a caixa maior */
+  max-width: 2000px; /* Aumenta a largura máxima da caixa */
+  background: rgba(0, 0, 0, 0.8); /* Fundo com opacidade um pouco maior */
+  border-radius: 20px;
+  border: 3px solid #0ff; /* Adiciona uma borda neon */
+  box-shadow: 0 0 30px #0ff; /* Aumenta a sombra para mais destaque */
+}
+
+/* Estilo dos botões em lista com borda colorida e fundo preto */
+.menu-button {
+  font-size: 20px;
+  padding: 15px 60px;
+  margin: 10px 0;  /* Espaçamento entre os botões */
+  color: #fff;
+  background: #000; /* Fundo preto */
+  border: 2px solid transparent; /* Borda transparente por padrão */
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%; /* Largura total dentro do container */
+  max-width: 300px; /* Limita a largura dos botões */
+  text-align: center; /* Centraliza o texto dentro dos botões */
+  display: block;
+}
+
+.menu-button:hover {
+  background: #000; /* Mantém o fundo preto ao passar o mouse */
+  color: #fff;
+}
+
+.play-button {
+  border-color: #00ff00; /* Borda verde */
+}
+
+.play-button:hover {
+  background: #00ff00; /* Fundo verde ao passar o mouse */
+  color: #000;
+}
+
+.ranking-button {
+  border-color: #ff00ff; /* Borda rosa */
+}
+
+.ranking-button:hover {
+  background: #ff00ff; /* Fundo rosa ao passar o mouse */
+  color: #000;
+}
+
+.chat-button {
+  border-color: #00ffff; /* Borda ciano */
+}
+
+.chat-button:hover {
+  background: #00ffff; /* Fundo ciano ao passar o mouse */
+  color: #000;
+}
+
+.settings-button {
+  border-color: #ffa500; /* Borda laranja */
+}
+
+.settings-button:hover {
+  background: #ffa500; /* Fundo laranja ao passar o mouse */
+  color: #000;
+}
+
+.exit-button {
+  border-color: #ff4500; /* Borda vermelha */
+}
+
+.exit-button:hover {
+  background: #ff4500; /* Fundo vermelho ao passar o mouse */
+  color: #000;
+}
+
+/* Ajuste para o tabuleiro do jogo */
+#pongGame {
+  display: block;
+  background-color: #000;
+  border: 4px solid #0ff;
+  box-shadow: 0 0 20px #0ff;
+  margin-top: 60px; /* Adiciona espaço para o header e avatares */
+  margin-bottom: 80px; /* Adiciona espaço abaixo do jogo para o botão */
+  z-index: 10;
+  width: 100%;
+  max-width: 800px; /* Mantém o tamanho máximo do tabuleiro do jogo */
+}
+
+/* Ajuste global */
+body {
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Previne rolagem */
+}
+
+/* Especificamente para a página do jogo */
+.game-active {
+  background-color: #000; /* Fundo preto */
+  position: relative;
+  overflow: hidden;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#goBackButton {
+  background-color: #f09; /* Rosa neon */
+  border: 2px solid #000;
+  color: #fff;
+  padding: 8px 16px; /* Tamanho reduzido do botão */
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  border-radius: 10px;
+  position: fixed; /* Use "fixed" para manter o botão fixo na tela */
+  bottom: 20px; /* Posiciona o botão na parte inferior */
+  right: 20px; /* Posiciona o botão à direita */
+  z-index: 100; /* Garante que esteja no topo */
+}
+
+#goBackButton:hover {
+  background-color: #0ff; /* Azul claro neon ao passar o mouse */
+  color: #000;
+  box-shadow: 0 0 10px #0ff;
+}
+
+/* Ajuste para centralizar os avatares corretamente */
+.avatars {
+  display: flex;
+  justify-content: space-between; /* Coloca os avatares nos extremos */
+  width: 100%; /* Largura total do container */
+  max-width: 800px; /* Mantém o alinhamento com o tabuleiro de jogo */
+  padding: 0 20px;
+  position: absolute;
+  top: 100px; /* Posicionado logo abaixo da barra de pontuação */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza o contêiner dos avatares */
+  z-index: 100;
+}
+
+.avatar-box {
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #f09; /* Borda rosa neon */
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo preto translúcido */
+  box-shadow: 0 0 10px #f09; /* Efeito de neon rosa */
+  border-radius: 5px; /* Canto levemente arredondado */
+  margin: 0 10px;
+}
+
+.avatar-box img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px; /* Retira o arredondamento para seguir o retângulo */
+  margin-bottom: 5px;
+}
+
+.avatar-box p {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  font-size: 12px;
+}
+
+/* Estilos para a pontuação */
+.score-box {
+  position: absolute;
+  top: 10px; /* Mantém o score no topo */
+  left: 50%; /* Centraliza a pontuação */
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo preto com transparência */
+  border: 2px solid #0ff; /* Borda neon */
+  box-shadow: 0 0 10px #0ff; /* Efeito de neon */
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  z-index: 100; /* Garantir que fique acima de todos os outros elementos */
+}
+
+#scoreText {
+  margin-bottom: 5px;
+}
+
+#matchInfo {
+  font-size: 14px;
+  color: #ccc; /* Cor mais clara para a informação adicional */
+}
